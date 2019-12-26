@@ -1,0 +1,407 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04480B9023B143BD002051C5 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 04480B8F23B143BD002051C5 /* Constants.m */; };
+		04480B9623B15F84002051C5 /* MeliService.m in Sources */ = {isa = PBXBuildFile; fileRef = 04480B9523B15F84002051C5 /* MeliService.m */; };
+		044AD02223AD76BB0082A8CE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 044AD02123AD76BB0082A8CE /* AppDelegate.m */; };
+		044AD02823AD76BB0082A8CE /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044AD02723AD76BB0082A8CE /* MainViewController.m */; };
+		044AD02D23AD76BF0082A8CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 044AD02C23AD76BF0082A8CE /* Assets.xcassets */; };
+		044AD03323AD76C00082A8CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 044AD03223AD76C00082A8CE /* main.m */; };
+		FF109791D911971053F60536 /* libPods-MeliAppRest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 44BF5B316264068CF95BE962 /* libPods-MeliAppRest.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		04480B8E23B143BD002051C5 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		04480B8F23B143BD002051C5 /* Constants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		04480B9423B15F84002051C5 /* MeliService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeliService.h; sourceTree = "<group>"; };
+		04480B9523B15F84002051C5 /* MeliService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeliService.m; sourceTree = "<group>"; };
+		044AD01D23AD76BA0082A8CE /* MeliAppRest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeliAppRest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		044AD02023AD76BB0082A8CE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		044AD02123AD76BB0082A8CE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		044AD02623AD76BB0082A8CE /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		044AD02723AD76BB0082A8CE /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		044AD02C23AD76BF0082A8CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		044AD03123AD76C00082A8CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		044AD03223AD76C00082A8CE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0D200D2C46088967F4210199 /* Pods-MeliAppRest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeliAppRest.debug.xcconfig"; path = "Target Support Files/Pods-MeliAppRest/Pods-MeliAppRest.debug.xcconfig"; sourceTree = "<group>"; };
+		240670D3C250C0FB80CF6F95 /* Pods-MeliAppRest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeliAppRest.release.xcconfig"; path = "Target Support Files/Pods-MeliAppRest/Pods-MeliAppRest.release.xcconfig"; sourceTree = "<group>"; };
+		44BF5B316264068CF95BE962 /* libPods-MeliAppRest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MeliAppRest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		044AD01A23AD76BA0082A8CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF109791D911971053F60536 /* libPods-MeliAppRest.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		04480B9123B15EDE002051C5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				044AD02623AD76BB0082A8CE /* MainViewController.h */,
+				044AD02723AD76BB0082A8CE /* MainViewController.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		04480B9223B15F05002051C5 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				04480B8E23B143BD002051C5 /* Constants.h */,
+				04480B8F23B143BD002051C5 /* Constants.m */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		04480B9323B15F2D002051C5 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				04480B9423B15F84002051C5 /* MeliService.h */,
+				04480B9523B15F84002051C5 /* MeliService.m */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		044AD01423AD76BA0082A8CE = {
+			isa = PBXGroup;
+			children = (
+				044AD01F23AD76BA0082A8CE /* MeliAppRest */,
+				044AD01E23AD76BA0082A8CE /* Products */,
+				A6A02B13ACDBB2F12DCC660A /* Pods */,
+				4A6AE71B8AABF455443735A8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		044AD01E23AD76BA0082A8CE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				044AD01D23AD76BA0082A8CE /* MeliAppRest.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		044AD01F23AD76BA0082A8CE /* MeliAppRest */ = {
+			isa = PBXGroup;
+			children = (
+				04480B9323B15F2D002051C5 /* Service */,
+				04480B9223B15F05002051C5 /* Constants */,
+				04480B9123B15EDE002051C5 /* Views */,
+				044AD02023AD76BB0082A8CE /* AppDelegate.h */,
+				044AD02123AD76BB0082A8CE /* AppDelegate.m */,
+				044AD02C23AD76BF0082A8CE /* Assets.xcassets */,
+				044AD03123AD76C00082A8CE /* Info.plist */,
+				044AD03223AD76C00082A8CE /* main.m */,
+			);
+			path = MeliAppRest;
+			sourceTree = "<group>";
+		};
+		4A6AE71B8AABF455443735A8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				44BF5B316264068CF95BE962 /* libPods-MeliAppRest.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A6A02B13ACDBB2F12DCC660A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0D200D2C46088967F4210199 /* Pods-MeliAppRest.debug.xcconfig */,
+				240670D3C250C0FB80CF6F95 /* Pods-MeliAppRest.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		044AD01C23AD76BA0082A8CE /* MeliAppRest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 044AD03623AD76C00082A8CE /* Build configuration list for PBXNativeTarget "MeliAppRest" */;
+			buildPhases = (
+				F2A8CF490B151E17C3BE552C /* [CP] Check Pods Manifest.lock */,
+				044AD01923AD76BA0082A8CE /* Sources */,
+				044AD01A23AD76BA0082A8CE /* Frameworks */,
+				044AD01B23AD76BA0082A8CE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MeliAppRest;
+			productName = MeliAppRest;
+			productReference = 044AD01D23AD76BA0082A8CE /* MeliAppRest.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		044AD01523AD76BA0082A8CE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = "Rodrigo Camara Robles";
+				TargetAttributes = {
+					044AD01C23AD76BA0082A8CE = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 044AD01823AD76BA0082A8CE /* Build configuration list for PBXProject "MeliAppRest" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 044AD01423AD76BA0082A8CE;
+			productRefGroup = 044AD01E23AD76BA0082A8CE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				044AD01C23AD76BA0082A8CE /* MeliAppRest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		044AD01B23AD76BA0082A8CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				044AD02D23AD76BF0082A8CE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F2A8CF490B151E17C3BE552C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MeliAppRest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		044AD01923AD76BA0082A8CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				044AD02823AD76BB0082A8CE /* MainViewController.m in Sources */,
+				044AD02223AD76BB0082A8CE /* AppDelegate.m in Sources */,
+				04480B9623B15F84002051C5 /* MeliService.m in Sources */,
+				044AD03323AD76C00082A8CE /* main.m in Sources */,
+				04480B9023B143BD002051C5 /* Constants.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		044AD03423AD76C00082A8CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		044AD03523AD76C00082A8CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		044AD03723AD76C00082A8CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D200D2C46088967F4210199 /* Pods-MeliAppRest.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = MeliAppRest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = rodricamara.MeliAppRest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		044AD03823AD76C00082A8CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 240670D3C250C0FB80CF6F95 /* Pods-MeliAppRest.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = MeliAppRest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = rodricamara.MeliAppRest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		044AD01823AD76BA0082A8CE /* Build configuration list for PBXProject "MeliAppRest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				044AD03423AD76C00082A8CE /* Debug */,
+				044AD03523AD76C00082A8CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		044AD03623AD76C00082A8CE /* Build configuration list for PBXNativeTarget "MeliAppRest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				044AD03723AD76C00082A8CE /* Debug */,
+				044AD03823AD76C00082A8CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 044AD01523AD76BA0082A8CE /* Project object */;
+}
