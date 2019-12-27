@@ -22,19 +22,13 @@
     self.itemId = [dictionary objectForKey:@"id"];
     self.title = [dictionary objectForKey:@"title"];
     self.seller = [[dictionary objectForKey:@"seller"] objectForKey:@"id"];
+    self.price = [[dictionary objectForKey:@"price"] longLongValue];
+    self.currencyId = [dictionary objectForKey:@"currencyId"];
+    self.available_quantity = [dictionary objectForKey:@"available_quantity"];
+    self.sold_quantity = [dictionary objectForKey:@"sold_quantity"];
+    self.condition = [dictionary objectForKey:@"condition"];
+    self.adressLocation = [dictionary objectForKey:@"adressLocation"];
+    self.pictures = [dictionary objectForKey:@"pictures"];
 }
-
-/*
- @property (nonatomic, strong) NSString *itemId;
- @property (nonatomic, strong) NSString *title;
- @property (nonatomic, strong) NSString *seller;
- @property (nonatomic) long price;
- @property (nonatomic, strong) NSString *currencyId;
- @property (nonatomic, strong) NSString *available_quantity;
- @property (nonatomic, strong) NSString *sold_quantity;
- @property (nonatomic, strong) NSString *condition;
- @property (nonatomic, strong) NSDictionary *adressLocation;
- @property (nonatomic, strong) NSArray *pictures;
- */
 
 @end

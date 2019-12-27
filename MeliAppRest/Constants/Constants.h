@@ -20,6 +20,10 @@ extern NSString *const kMainNavTitle;
 extern NSString *const kPlaceholderSearch;
 extern NSString *const KButtonSearch;
 extern NSInteger const kMaxNumberOfSearchCharacters;
+extern NSString *const kProductDetailNavTitle;
+extern NSString *const kProductsNavTitle;
+extern NSString *const kAvailableQuantity;
+extern NSString *const kSoldQuantity;
 
 // Alerts
 extern NSString *const kAlertErrorTitle;
@@ -31,5 +35,6 @@ extern NSString *const kBaseURL;
 extern NSString *const kSites;
 extern NSString *const kMLA;
 extern NSString *const kSearch;
+extern NSString *const kItem;
 
 @end

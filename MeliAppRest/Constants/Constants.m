@@ -20,6 +20,10 @@ NSString *const kMainNavTitle = @"Mercado Libre";
 NSString *const kPlaceholderSearch = @"Buscar en Mercado Libre";
 NSString *const KButtonSearch = @"S";
 NSInteger const kMaxNumberOfSearchCharacters = 30;
+NSString *const kProductDetailNavTitle = @"Producto";
+NSString *const kProductsNavTitle = @"Búsqueda";
+NSString *const kAvailableQuantity = @"Cantidad disponible";
+NSString *const kSoldQuantity = @"Cantidad vendida";
 
 // Alerts
 NSString *const kAlertErrorTitle = @"Error";
@@ -32,6 +36,6 @@ NSString *const kBaseURL = @"https://api.mercadolibre.com";
 NSString *const kSites = @"/sites";
 NSString *const kMLA = @"/MLA";
 NSString *const kSearch = @"/search?q=";
-
+NSString *const kItem = @"/items";
 
 @end

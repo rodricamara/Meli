@@ -16,6 +16,7 @@
 		04956CFE23B578EC005B640C /* ProductsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04956CFD23B578EC005B640C /* ProductsViewController.m */; };
 		04956D0223B5829A005B640C /* ProductModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04956D0123B5829A005B640C /* ProductModel.m */; };
 		04956D0523B58F9D005B640C /* ProductsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04956D0423B58F9D005B640C /* ProductsTableViewCell.m */; };
+		04956D0823B5B27D005B640C /* ProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04956D0723B5B27D005B640C /* ProductDetailViewController.m */; };
 		FF109791D911971053F60536 /* libPods-MeliAppRest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 44BF5B316264068CF95BE962 /* libPods-MeliAppRest.a */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,8 @@
 		04956D0123B5829A005B640C /* ProductModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductModel.m; sourceTree = "<group>"; };
 		04956D0323B58F9D005B640C /* ProductsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductsTableViewCell.h; sourceTree = "<group>"; };
 		04956D0423B58F9D005B640C /* ProductsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductsTableViewCell.m; sourceTree = "<group>"; };
+		04956D0623B5B27D005B640C /* ProductDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductDetailViewController.h; sourceTree = "<group>"; };
+		04956D0723B5B27D005B640C /* ProductDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductDetailViewController.m; sourceTree = "<group>"; };
 		0D200D2C46088967F4210199 /* Pods-MeliAppRest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeliAppRest.debug.xcconfig"; path = "Target Support Files/Pods-MeliAppRest/Pods-MeliAppRest.debug.xcconfig"; sourceTree = "<group>"; };
 		240670D3C250C0FB80CF6F95 /* Pods-MeliAppRest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeliAppRest.release.xcconfig"; path = "Target Support Files/Pods-MeliAppRest/Pods-MeliAppRest.release.xcconfig"; sourceTree = "<group>"; };
 		44BF5B316264068CF95BE962 /* libPods-MeliAppRest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MeliAppRest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,6 +67,8 @@
 				04956CFD23B578EC005B640C /* ProductsViewController.m */,
 				04956D0323B58F9D005B640C /* ProductsTableViewCell.h */,
 				04956D0423B58F9D005B640C /* ProductsTableViewCell.m */,
+				04956D0623B5B27D005B640C /* ProductDetailViewController.h */,
+				04956D0723B5B27D005B640C /* ProductDetailViewController.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -243,6 +248,7 @@
 				044AD02823AD76BB0082A8CE /* MainViewController.m in Sources */,
 				04956D0523B58F9D005B640C /* ProductsTableViewCell.m in Sources */,
 				044AD02223AD76BB0082A8CE /* AppDelegate.m in Sources */,
+				04956D0823B5B27D005B640C /* ProductDetailViewController.m in Sources */,
 				04480B9623B15F84002051C5 /* MeliService.m in Sources */,
 				044AD03323AD76C00082A8CE /* main.m in Sources */,
 				04956CFE23B578EC005B640C /* ProductsViewController.m in Sources */,

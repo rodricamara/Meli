@@ -93,7 +93,7 @@
     [self applyConstraintsSearchView];
     [self applyConstraintsScrollView];
     [self applyConstraintsContentView];
-    [self applyConstraintsSearchButton];
+    [self applyConstraintssearchButton];
     [self applyConstraintsSearchField];
 }
 
@@ -136,7 +136,7 @@
     }];
 }
 
-- (void) applyConstraintsSearchButton {
+- (void) applyConstraintssearchButton {
     [self.searchView addSubview:self.searchButton];
     [self.searchButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.view).offset(self.navigationController.navigationBar.frame.size.height + [UIApplication sharedApplication].statusBarFrame.size.height);
@@ -159,7 +159,7 @@
     NSString *path = [NSString stringWithFormat: @"%@%@%@%@", kSites, kMLA, kSearch, searchInputFormated];
     
     [MeliService getProduct:(NSURL *)baseURL andResources: path andSuccesBlock:^(id response) {
-        //NSLog(@"Search for: %@, response%@",seachInput, response);
+        NSLog(@"Search for: %@, response%@",seachInput, response);
         [self.searchButton setEnabled:YES];
         
         ProductsViewController *productsVC = [[ProductsViewController alloc] init];

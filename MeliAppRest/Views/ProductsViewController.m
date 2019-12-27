@@ -10,12 +10,17 @@
 #import "Masonry.h"
 #import "ProductsTableViewCell.h"
 #import "UIImageView+AFNetworking.h"
+#import "Constants.h"
+#import "MeliService.h"
+#import "ProductModel.h"
+#import "ProductDetailViewController.h"
 
 static NSString *cellIdentifier = @"ProductCell";
 
 @interface ProductsViewController ()
 
 @property (nonatomic, strong) UITableView *tableProducts;
+@property (nonatomic) BOOL productSelected;
 
 @end
 
@@ -23,12 +28,26 @@ static NSString *cellIdentifier = @"ProductCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [super viewDidLoad];
 }
 
 - (void)loadView {
     [super loadView];
+    [self setupView];
     [self initializeTableProducts];
     [self applyConstraintsTableProducts];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    self.productSelected = NO;
+}
+
+- (void) setupView {
+    // Navigation Controller
+    [self.navigationItem setTitle:kProductsNavTitle];
+    // View
+    [self.view setBackgroundColor:[UIColor whiteColor]];
 }
 
 #pragma mark - private constraints methods
@@ -82,12 +101,45 @@ static NSString *cellIdentifier = @"ProductCell";
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    //self buttonPressed
+    
+    NSDictionary *dictionary = [self.products objectAtIndex:indexPath.row];
+    NSString *itemID = [dictionary objectForKey:@"id"];
+    
+    if (!self.productSelected){
+        self.productSelected = YES;
+        [self getProductDetail:itemID];
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 90;
 }
 
+- (void)getProductDetail:(NSString *) itemID {
+    
+    NSURL *baseURL = [NSURL URLWithString:kBaseURL];
+    NSString *path = [NSString stringWithFormat: @"%@/%@", kItem, itemID];
+    
+    [MeliService getProduct:(NSURL *)baseURL andResources:path andSuccesBlock:^(id response) {
+        
+        ProductModel *productModel = [[ProductModel alloc] initWithDictionary:response];
+        ProductDetailViewController *productDetailVC = [[ProductDetailViewController alloc] initWithProductModel: productModel];
+        
+        [self.navigationController pushViewController:productDetailVC animated:YES];
+    }       andFailureBlock:^(NSError *error) {
+        NSLog(@"Error in Item Details API: %@",error);
+        [self popupErrorAlert];
+    }];
+}
+
+-(void) popupErrorAlert {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:kAlertErrorTitle message:kAlertErrorMessage preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *actionOK = [UIAlertAction actionWithTitle:kAlertErrorAction style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }];
+    [alert addAction:actionOK];
+    [self presentViewController:alert animated:YES completion:nil];
+}
 
 @end
