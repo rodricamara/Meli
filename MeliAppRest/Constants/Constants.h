@@ -19,6 +19,7 @@ extern NSInteger const kCornerRadius;
 extern NSString *const kMainNavTitle;
 extern NSString *const kPlaceholderSearch;
 extern NSString *const KButtonSearch;
+extern NSInteger const kMaxNumberOfSearchCharacters;
 
 // Alerts
 extern NSString *const kAlertErrorTitle;

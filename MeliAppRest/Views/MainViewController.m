@@ -10,6 +10,7 @@
 #import "Constants.h"
 #import "Masonry.h"
 #import "MeliService.h"
+#import "ProductsViewController.h"
 
 @interface MainViewController ()
 
@@ -92,7 +93,7 @@
     [self applyConstraintsSearchView];
     [self applyConstraintsScrollView];
     [self applyConstraintsContentView];
-    [self applyConstraintssearchButton];
+    [self applyConstraintsSearchButton];
     [self applyConstraintsSearchField];
 }
 
@@ -135,7 +136,7 @@
     }];
 }
 
-- (void) applyConstraintssearchButton {
+- (void) applyConstraintsSearchButton {
     [self.searchView addSubview:self.searchButton];
     [self.searchButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.view).offset(self.navigationController.navigationBar.frame.size.height + [UIApplication sharedApplication].statusBarFrame.size.height);
@@ -158,8 +159,14 @@
     NSString *path = [NSString stringWithFormat: @"%@%@%@%@", kSites, kMLA, kSearch, searchInputFormated];
     
     [MeliService getProduct:(NSURL *)baseURL andResources: path andSuccesBlock:^(id response) {
-        NSLog(@"Search for: %@, response%@",seachInput, response);
+        //NSLog(@"Search for: %@, response%@",seachInput, response);
         [self.searchButton setEnabled:YES];
+        
+        ProductsViewController *productsVC = [[ProductsViewController alloc] init];
+        productsVC.products = [response objectForKey:@"results"];
+       
+        [self.navigationController pushViewController:productsVC animated:YES];
+        
     }        andFailureBlock:^(NSError *error) {
         NSLog(@"Error in search Button: %@",error);
         [self popupErrorAlert];

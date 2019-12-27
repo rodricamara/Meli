@@ -17,8 +17,9 @@ NSInteger const kCornerRadius = 7;
 
 // UI Elements
 NSString *const kMainNavTitle = @"Mercado Libre";
-NSString *const kPlaceholderSearch = @"Find in Mercado Libre";
-NSString *const KButtonSearch = @"Search";
+NSString *const kPlaceholderSearch = @"Buscar en Mercado Libre";
+NSString *const KButtonSearch = @"S";
+NSInteger const kMaxNumberOfSearchCharacters = 30;
 
 // Alerts
 NSString *const kAlertErrorTitle = @"Error";
