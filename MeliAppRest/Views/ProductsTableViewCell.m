@@ -31,7 +31,6 @@
         [self applyConstraintsImage];
         [self applyConstraintsTitleLabel];
         [self applyConstraintsPriceLabel];
-
     }
     return self;
 }

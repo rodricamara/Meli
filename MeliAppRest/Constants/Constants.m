@@ -10,6 +10,11 @@
 
 @implementation Constants
 
+// Fonts: http://iosfonts.com/
+NSString *const kFontAppleSD = @"Apple SD Gothic Neo";
+NSString *const kFontAvenir = @"Avenir";
+NSString *const kFontGilSans = @"Gill Sans";
+
 // Constraints
 NSInteger const kOffsetSide = 25;
 NSInteger const kBorderWidth = 1;
@@ -17,17 +22,18 @@ NSInteger const kCornerRadius = 7;
 
 // UI Elements
 NSString *const kMainNavTitle = @"Mercado Libre";
-NSString *const kPlaceholderSearch = @"Buscar en Mercado Libre";
-NSString *const KButtonSearch = @"S";
+NSString *const kPlaceholderSearch = @" Find in Mercado Libre";
+NSString *const KButtonImage = @"searchImage.png";
 NSInteger const kMaxNumberOfSearchCharacters = 30;
-NSString *const kProductDetailNavTitle = @"Producto";
-NSString *const kProductsNavTitle = @"Búsqueda";
-NSString *const kAvailableQuantity = @"Cantidad disponible";
-NSString *const kSoldQuantity = @"Cantidad vendida";
+NSString *const kProductDetailNavTitle = @"Product Detail";
+NSString *const kProductsNavTitle = @"Search Results";
+NSString *const kAvailableQuantity = @"Available quantity";
+NSString *const kSoldQuantity = @"Sold quantity";
 
 // Alerts
 NSString *const kAlertErrorTitle = @"Error";
 NSString *const kAlertErrorMessage = @"The system is unavilable. Try again or come back later";
+NSString *const kAlertEmptySearchMessage = @"The search could not find anything. Please try again";
 NSString *const kAlertErrorAction = @"Ok";
 
 // Meli API Rest

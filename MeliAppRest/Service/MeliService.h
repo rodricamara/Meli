@@ -11,7 +11,7 @@
 @interface MeliService : NSObject
 
 // Class method to search an entered field
-+ (void) getProduct:(NSURL *)baseURL andResources: (NSString *)path andSuccesBlock:(void(^)(id response))successBlock andFailureBlock:(void(^)(NSError *))errorBlock;
++ (void) getProducts:(NSURL *)baseURL andResources: (NSString *)path andSuccesBlock:(void(^)(id response))successBlock andFailureBlock:(void(^)(NSError *))errorBlock;
 
 @end
 

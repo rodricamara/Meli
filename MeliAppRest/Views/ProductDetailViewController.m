@@ -31,15 +31,20 @@
 
 @implementation ProductDetailViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-}
-
 - (void)loadView {
     [super loadView];
     [self setupView];
     [self initializeAllViews];
     [self applyAllConstraints];
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+}
+
+- (void)didReceiveMemoryWarning {
+    // Called when the System determines amount of available memory is low
+    [super didReceiveMemoryWarning];
 }
 
 - (instancetype) initWithProductModel: (ProductModel *) product {
