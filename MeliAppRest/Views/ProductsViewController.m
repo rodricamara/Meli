@@ -150,6 +150,23 @@ static NSString *cellIdentifier = @"ProductCell";
     }];
 }
 
+- (void)getSeller:(NSString *) itemID {
+    
+    NSURL *baseURL = [NSURL URLWithString:kAPIBaseURL];
+    NSString *path = [NSString stringWithFormat: @"%@/%@", kAPIItem, itemID];
+    
+    [MeliService getProducts:(NSURL *)baseURL andResources:path andSuccesBlock:^(id response) {
+        
+        ProductModel *productModel = [[ProductModel alloc] initWithDictionary:response];
+        ProductDetailViewController *productDetailVC = [[ProductDetailViewController alloc] initWithProductModel: productModel];
+        
+        [self.navigationController pushViewController:productDetailVC animated:YES];
+    }       andFailureBlock:^(NSError *error) {
+        NSLog(@"Error in Item Details API: %@",error);
+        [self popupErrorAlert];
+    }];
+}
+
 - (void)popupErrorAlert {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:kAlertErrorTitle message:kAlertErrorMessage preferredStyle:UIAlertControllerStyleAlert];
     

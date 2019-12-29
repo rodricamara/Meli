@@ -16,9 +16,8 @@ extern NSString *const kFontAvenir;
 extern NSString *const kFontGilSans;
 
 // Constraints
-extern NSInteger const kOffsetSide;
-extern NSInteger const kBorderWidth;
-extern NSInteger const kCornerRadius;
+extern NSInteger const kConstraintBorderWidth;
+extern NSInteger const kConstraintCornerRadius;
 
 // UI Elements
 extern NSString *const kUIMainNavTitle;

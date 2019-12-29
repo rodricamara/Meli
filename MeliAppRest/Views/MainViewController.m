@@ -84,8 +84,8 @@
     self.searchField = [[UITextField alloc] initWithFrame:CGRectZero];
     self.searchField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:kUIPlaceholderSearch];
     self.searchField.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    self.searchField.layer.borderWidth = kBorderWidth;
-    self.searchField.layer.cornerRadius = kCornerRadius;
+    self.searchField.layer.borderWidth = kConstraintBorderWidth;
+    self.searchField.layer.cornerRadius = kConstraintCornerRadius;
     [self.searchField setBackgroundColor:[UIColor whiteColor]];
     [self.searchField setFont:[UIFont fontWithName:kFontAvenir size:15]];
 }

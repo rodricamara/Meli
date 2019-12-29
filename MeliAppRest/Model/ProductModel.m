@@ -21,7 +21,7 @@
 - (void) setDictionary: (NSDictionary *) dictionary {
     self.itemId = [dictionary objectForKey:@"id"];
     self.title = [dictionary objectForKey:@"title"];
-    self.seller = [[dictionary objectForKey:@"seller"] objectForKey:@"id"];
+    self.seller = [dictionary objectForKey:@"seller"];
     self.price = [[dictionary objectForKey:@"price"] longLongValue];
     self.currencyId = [dictionary objectForKey:@"currencyId"];
     self.available_quantity = [dictionary objectForKey:@"available_quantity"];

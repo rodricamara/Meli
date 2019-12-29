@@ -16,9 +16,8 @@ NSString *const kFontAvenir = @"Avenir";
 NSString *const kFontGilSans = @"Gill Sans";
 
 // Constraints
-NSInteger const kOffsetSide = 25;
-NSInteger const kBorderWidth = 1;
-NSInteger const kCornerRadius = 7;
+NSInteger const kConstraintBorderWidth = 1;
+NSInteger const kConstraintCornerRadius = 7;
 
 // UI Elements
 NSString *const kUIMainNavTitle = @"Mercado Libre";
