@@ -52,7 +52,7 @@
 
 - (void) setupNavigationController {
     [self.navigationController.navigationBar setBarTintColor:[UIColor yellowColor]];
-    [self.navigationItem setTitle:kMainNavTitle];
+    [self.navigationItem setTitle:kUIMainNavTitle];
     [self.navigationItem setTitleView:self.searchField];
     [self.searchField becomeFirstResponder];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.searchButton];
@@ -82,7 +82,7 @@
 
 - (void)initializeSearchField {
     self.searchField = [[UITextField alloc] initWithFrame:CGRectZero];
-    self.searchField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:kPlaceholderSearch];
+    self.searchField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:kUIPlaceholderSearch];
     self.searchField.layer.borderColor = [UIColor lightGrayColor].CGColor;
     self.searchField.layer.borderWidth = kBorderWidth;
     self.searchField.layer.cornerRadius = kCornerRadius;
@@ -93,12 +93,12 @@
 - (void)initializeSearchButton {
     self.searchButton = [[UIButton alloc] initWithFrame:CGRectZero];
     self.searchButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [self.searchButton setImage:[UIImage imageNamed:KButtonImage] forState:UIControlStateNormal];
+    [self.searchButton setImage:[UIImage imageNamed:KUIButtonImage] forState:UIControlStateNormal];
     [self.searchButton addTarget:self action:@selector(startSearch) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)initializeSearchBarButton {
-    self.searchBarButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:KButtonImage] style:UIBarButtonItemStylePlain target:self action:nil];
+    self.searchBarButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:KUIButtonImage] style:UIBarButtonItemStylePlain target:self action:nil];
 }
 
 #pragma mark - private constraints methods
@@ -147,7 +147,7 @@
 
 #pragma mark - private UITextFieldDelegate
 
-- (BOOL) textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(nonnull NSString *)string{
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(nonnull NSString *)string{
     
     NSString *stringTextField = [textField.text stringByReplacingCharactersInRange:range withString:string];
     NSUInteger lenghtTextField = stringTextField.length;
@@ -174,15 +174,17 @@
     
     [self.searchButton setEnabled:NO];
     
-    NSString *seachInput = [self.searchField text];
-    NSString *searchInputFormated = [seachInput stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    NSString *searchInput = [self.searchField text];
+    NSString *searchInputFormated = [searchInput stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     
-    NSURL *baseURL = [NSURL URLWithString:kBaseURL];
-    NSString *path = [NSString stringWithFormat: @"%@%@%@%@", kSites, kMLA, kSearch, searchInputFormated];
+    NSURL *baseURL = [NSURL URLWithString:kAPIBaseURL];
+    NSString *path = [NSString stringWithFormat: @"%@%@%@%@", kAPISites, kAPISiteID, kAPISearch, searchInputFormated];
     
     [MeliService getProducts:(NSURL *)baseURL andResources: path andSuccesBlock:^(id response) {
-        NSLog(@"Search for: %@, response%@",seachInput, response);
+        
         [self.searchButton setEnabled:YES];
+        
+        NSLog(@"Search for: %@, Results: %@",searchInput, [response objectForKey:@"results"]);
         
         ProductsViewController *productsVC = [[ProductsViewController alloc] init];
         productsVC.products = [response objectForKey:@"results"];
@@ -204,6 +206,12 @@
     }];
     [alert addAction:actionOK];
     [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (void)dismissKeyboardWithTapOnView {
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self.scrollView action:@selector(endEditing)];
+    [tapGestureRecognizer setCancelsTouchesInView:NO];
+    [self.view addGestureRecognizer:tapGestureRecognizer];
 }
 
 @end

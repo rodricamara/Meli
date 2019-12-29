@@ -51,16 +51,16 @@ static NSString *cellIdentifier = @"ProductCell";
     [super didReceiveMemoryWarning];
 }
 
-- (void) setupView {
+- (void)setupView {
     // Navigation Controller
-    [self.navigationItem setTitle:kProductsNavTitle];
+    [self.navigationItem setTitle:kUIProductsNavTitle];
     // View
     [self.view setBackgroundColor:[UIColor whiteColor]];
 }
 
 #pragma mark - private initialize methods
 
--(void) initializeTableProducts{
+- (void)initializeTableProducts{
     self.tableProducts = [[UITableView alloc] initWithFrame:CGRectZero];
     self.tableProducts.backgroundColor = [UIColor whiteColor];
     self.tableProducts.delegate = self;
@@ -69,7 +69,7 @@ static NSString *cellIdentifier = @"ProductCell";
 
 #pragma mark - private constraints methods
 
--(void) applyConstraintsTableProducts {
+- (void)applyConstraintsTableProducts {
     [self.view addSubview:self.tableProducts];
     UIEdgeInsets padding = UIEdgeInsetsMake(15, 10, 10, 10);
     [self.tableProducts mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -79,11 +79,11 @@ static NSString *cellIdentifier = @"ProductCell";
 
 #pragma mark - UITableViewDelegate
 
-- (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
-- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [self.products count];
 }
 
@@ -103,9 +103,17 @@ static NSString *cellIdentifier = @"ProductCell";
     NSString *image =  [products objectForKey:@"thumbnail"];
     NSURL *imageURL = [NSURL URLWithString:image];
     
+    bool shipping = [[[products objectForKey:@"shipping"] objectForKey:@"free_shipping"] boolValue];
+    
     [cell.image setImageWithURL:imageURL placeholderImage:[UIImage imageNamed:@"placeholder"]];
     cell.titleLabel.text = title;
-    cell.priceLabel.text = [NSString stringWithFormat:@"$%lu", price];
+    cell.priceLabel.text = [NSString stringWithFormat:@"$ %lu", price];
+    
+    if (shipping){
+        cell.shippingLabel.text = kUIFreeShipping;
+    } else {
+        cell.shippingLabel.text = @"";
+    }
     
     return cell;
 }
@@ -122,13 +130,13 @@ static NSString *cellIdentifier = @"ProductCell";
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 90;
+    return 110;
 }
 
 - (void)getProductDetail:(NSString *) itemID {
     
-    NSURL *baseURL = [NSURL URLWithString:kBaseURL];
-    NSString *path = [NSString stringWithFormat: @"%@/%@", kItem, itemID];
+    NSURL *baseURL = [NSURL URLWithString:kAPIBaseURL];
+    NSString *path = [NSString stringWithFormat: @"%@/%@", kAPIItem, itemID];
     
     [MeliService getProducts:(NSURL *)baseURL andResources:path andSuccesBlock:^(id response) {
         
@@ -142,7 +150,7 @@ static NSString *cellIdentifier = @"ProductCell";
     }];
 }
 
--(void) popupErrorAlert {
+- (void)popupErrorAlert {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:kAlertErrorTitle message:kAlertErrorMessage preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction *actionOK = [UIAlertAction actionWithTitle:kAlertErrorAction style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
@@ -153,13 +161,13 @@ static NSString *cellIdentifier = @"ProductCell";
 }
 
 - (void)popUpEmptySearchAlert {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:kAlertErrorTitle message:kAlertEmptySearchMessage preferredStyle:UIAlertControllerStyleAlert];
-        
-        UIAlertAction *actionOK = [UIAlertAction actionWithTitle:kAlertErrorAction style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            [self.navigationController popViewControllerAnimated:YES];
-        }];
-        [alert addAction:actionOK];
-        [self presentViewController:alert animated:YES completion:nil];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:kAlertErrorTitle message:kAlertEmptySearchMessage preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *actionOK = [UIAlertAction actionWithTitle:kAlertErrorAction style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }];
+    [alert addAction:actionOK];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 @end

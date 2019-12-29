@@ -21,14 +21,15 @@ NSInteger const kBorderWidth = 1;
 NSInteger const kCornerRadius = 7;
 
 // UI Elements
-NSString *const kMainNavTitle = @"Mercado Libre";
-NSString *const kPlaceholderSearch = @" Find in Mercado Libre";
-NSString *const KButtonImage = @"searchImage.png";
-NSInteger const kMaxNumberOfSearchCharacters = 30;
-NSString *const kProductDetailNavTitle = @"Product Detail";
-NSString *const kProductsNavTitle = @"Search Results";
-NSString *const kAvailableQuantity = @"Available quantity";
-NSString *const kSoldQuantity = @"Sold quantity";
+NSString *const kUIMainNavTitle = @"Mercado Libre";
+NSString *const kUIPlaceholderSearch = @" Find in Mercado Libre";
+NSString *const KUIButtonImage = @"searchImage.png";
+NSInteger const kUIMaxNumberOfSearchCharacters = 30;
+NSString *const kUIProductDetailNavTitle = @"Product Detail";
+NSString *const kUIProductsNavTitle = @"Search Results";
+NSString *const kUIAvailableQuantity = @"Available quantity";
+NSString *const kUISoldQuantity = @"Sold quantity";
+NSString *const kUIFreeShipping = @"Free Shipping";
 
 // Alerts
 NSString *const kAlertErrorTitle = @"Error";
@@ -38,10 +39,10 @@ NSString *const kAlertErrorAction = @"Ok";
 
 // Meli API Rest
 // Search example of "zapatillas": https://api.mercadolibre.com/sites/MLA/search?q=Zapatillas
-NSString *const kBaseURL = @"https://api.mercadolibre.com";
-NSString *const kSites = @"/sites";
-NSString *const kMLA = @"/MLA";
-NSString *const kSearch = @"/search?q=";
-NSString *const kItem = @"/items";
+NSString *const kAPIBaseURL = @"https://api.mercadolibre.com";
+NSString *const kAPISites = @"/sites";
+NSString *const kAPISiteID = @"/MLA";
+NSString *const kAPISearch = @"/search?q=";
+NSString *const kAPIItem = @"/items";
 
 @end

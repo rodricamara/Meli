@@ -21,14 +21,15 @@ extern NSInteger const kBorderWidth;
 extern NSInteger const kCornerRadius;
 
 // UI Elements
-extern NSString *const kMainNavTitle;
-extern NSString *const kPlaceholderSearch;
-extern NSString *const KButtonImage;
-extern NSInteger const kMaxNumberOfSearchCharacters;
-extern NSString *const kProductDetailNavTitle;
-extern NSString *const kProductsNavTitle;
-extern NSString *const kAvailableQuantity;
-extern NSString *const kSoldQuantity;
+extern NSString *const kUIMainNavTitle;
+extern NSString *const kUIPlaceholderSearch;
+extern NSString *const KUIButtonImage;
+extern NSInteger const kUIMaxNumberOfSearchCharacters;
+extern NSString *const kUIProductDetailNavTitle;
+extern NSString *const kUIProductsNavTitle;
+extern NSString *const kUIAvailableQuantity;
+extern NSString *const kUISoldQuantity;
+extern NSString *const kUIFreeShipping;
 
 // Alerts
 extern NSString *const kAlertErrorTitle;
@@ -37,10 +38,10 @@ extern NSString *const kAlertEmptySearchMessage;
 extern NSString *const kAlertErrorAction;
 
 // Meli API Rest
-extern NSString *const kBaseURL;
-extern NSString *const kSites;
-extern NSString *const kMLA;
-extern NSString *const kSearch;
-extern NSString *const kItem;
+extern NSString *const kAPIBaseURL;
+extern NSString *const kAPISites;
+extern NSString *const kAPISiteID;
+extern NSString *const kAPISearch;
+extern NSString *const kAPIItem;
 
 @end

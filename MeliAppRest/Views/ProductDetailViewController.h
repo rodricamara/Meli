@@ -11,7 +11,7 @@
 
 @interface ProductDetailViewController : UIViewController
 
-- (instancetype) initWithProductModel: (ProductModel *) product;
+- (instancetype)initWithProductModel: (ProductModel *) product;
 
 @end
 
