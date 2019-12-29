@@ -10,6 +10,7 @@
 #import "ProductModel.h"
 #import "Masonry.h"
 #import "Constants.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface ProductDetailViewController ()
 
@@ -18,14 +19,13 @@
 @property (nonatomic, strong) ProductModel *product;
 
 @property (nonatomic, strong) UILabel *titleLabel;
-@property (nonatomic, strong) UILabel *sellerLabel;
+
 @property (nonatomic, strong) UILabel *priceLabel;
 @property (nonatomic, strong) UILabel *currencyIdLabel;
 @property (nonatomic, strong) UILabel *available_quantityLabel;
 @property (nonatomic, strong) UILabel *sold_quantityLabel;
 @property (nonatomic, strong) UILabel *conditionLabel;
 @property (nonatomic, strong) UILabel *adressLocationLabel;
-@property (nonatomic, strong) NSMutableArray *picturesMutArray;
 
 @end
 
@@ -69,6 +69,7 @@
     [self initializeContentView];
     [self initializeConditionLabel];
     [self initializeTitleLabel];
+    [self initializeImage];
     [self initializePriceLabel];
     [self initializeAvailableQuantityLabel];
     [self initializeSoldQuantityLabel];
@@ -102,6 +103,14 @@
     self.titleLabel.numberOfLines = 2;
 }
 
+- (void)initializeImage {
+    self.imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+    
+    NSString *image = [self.product.pictures[0] objectForKey:@"secure_url"];
+    NSURL *imageURL = [NSURL URLWithString:image];
+    [self.imageView setImageWithURL:imageURL placeholderImage:[UIImage imageNamed:@"placeholder"]];
+}
+
 - (void)initializePriceLabel {
     self.priceLabel = [[UILabel alloc] initWithFrame:CGRectZero];
     self.priceLabel.text = [NSString stringWithFormat:@"$ %ld", self.product.price];
@@ -130,6 +139,7 @@
     [self applyConstraintsContentView];
     [self applyContraintsConditionLabel];
     [self applyContraintsTitleLabel];
+    [self applyContraintsImage];
     [self applyContraintsPriceLabel];
     [self applyContraintsAvailableQuantityLabel];
     [self applyContraintsSoldQuantityLabel];
@@ -169,10 +179,20 @@
     }];
 }
 
+- (void)applyContraintsImage{
+    [self.contentView addSubview:self.imageView];
+    [self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.titleLabel.mas_bottom).offset(10);
+        make.left.equalTo(self.contentView).offset(40);
+        make.right.equalTo(self.contentView).offset(-40);
+        make.height.equalTo(self.imageView.mas_width);
+    }];
+}
+
 - (void)applyContraintsPriceLabel{
     [self.contentView addSubview:self.priceLabel];
     [self.priceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.titleLabel.mas_bottom).offset(10);
+        make.top.equalTo(self.imageView.mas_bottom).offset(10);
         make.left.equalTo(self.titleLabel);
         make.right.equalTo(self.contentView).offset(-10);
     }];

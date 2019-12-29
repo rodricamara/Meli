@@ -11,6 +11,8 @@
 
 @interface ProductDetailViewController : UIViewController
 
+@property (nonatomic, strong) UIImageView *imageView;
+
 - (instancetype)initWithProductModel: (ProductModel *) product;
 
 @end
